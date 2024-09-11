@@ -26,7 +26,7 @@ tasks.named('test') {
 //일반 Jar 생성
 task buildJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
+        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain' // 실행할 main() 의 클래스 지정
     }
     with jar
 }
