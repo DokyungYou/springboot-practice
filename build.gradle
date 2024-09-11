@@ -30,15 +30,22 @@ tasks.named('test') {
  */
 task buildJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain' // 실행할 main() 의 클래스 지정
+        attributes 'Main-Class': 'hello.embed.EmbeddedTomcatSpringMain' // 실행할 main() 의 클래스 지정
     }
     with jar
 }
 
-//Fat Jar 생성
+/** Fat Jar 생성
+ * jar 안에는 jar를 포함하지 못한다. (클래스는 가능)
+ * 라이브러리에 사용되는 jar를 풀어서 나온 클래스들을 뽑아서 새로 만드는 jar에 포함시키는 방식
+ *
+ * - 모두 클래스형태로 풀려있으니 어떤 라이브러리가 사용되고있는지 추적이 힘듬
+ * - 파일명 중복 해결X (서로 다른 라이브러리였던 중복된 이름의 파일들)
+ *
+ */
 task buildFatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
+        attributes 'Main-Class': 'hello.embed.EmbeddedTomcatSpringMain'
     }
     duplicatesStrategy = DuplicatesStrategy.WARN
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
