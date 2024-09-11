@@ -30,7 +30,7 @@ tasks.named('test') {
  */
 task buildJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'hello.embed.EmbeddedTomcatSpringMain' // 실행할 main() 의 클래스 지정
+        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain' // 실행할 main() 의 클래스 지정
     }
     with jar
 }
@@ -45,7 +45,7 @@ task buildJar(type: Jar) {
  */
 task buildFatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'hello.embed.EmbeddedTomcatSpringMain'
+        attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
     }
     duplicatesStrategy = DuplicatesStrategy.WARN
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }

@@ -8,7 +8,7 @@ import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
 
-public class EmbeddedTomcatServletMain {
+public class EmbedTomcatServletMain {
     public static void main(String[] args) throws LifecycleException {
         System.out.println("EmbeddedTomcatServletMain.main");
 
