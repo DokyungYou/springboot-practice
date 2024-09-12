@@ -11,9 +11,10 @@ import org.springframework.transaction.TransactionManager;
 import javax.sql.DataSource;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class DbConfig {
 
+    // 해당 빈들은 이렇게 수동으로 등록하지 않아도 된다. (스프링 부트가 자동으로 등록해주는 빈들이다.)
     @Bean
     public DataSource dataSource() {
         log.info("dataSource 빈 등록");
