@@ -19,6 +19,10 @@ repositories {
 }
 
 dependencies {
+    /* 직접 빌드했던 jar를 libs에 직접 가지게끔 해놨다.
+    라이브러리를 jar 파일로 직접 가지고 있으면 files 로 지정하면 된다. */
+    implementation files('libs/memory-v1.jar')
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
