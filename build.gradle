@@ -42,7 +42,7 @@ dependencies {
     implementation 'org.yaml:snakeyaml:1.33'*/
 
 
-    // 2. 스프링 부트 라이브러리 버전 관리 (id 'io.spring.dependency-management' 플러그인 주석해제)
+/*    // 2. 스프링 부트 라이브러리 버전 관리 (id 'io.spring.dependency-management' 플러그인 주석해제)
     // 스프링 부트가 관리하지 않는 외부 라이브러리는 버전을 직접 적어줘야함 (공식문서에서 Dependency Versions 참고, 없는 라이브러리라면 버전적어주기)
     
     //스프링 웹, MVC
@@ -59,12 +59,16 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-to-slf4j'
     implementation 'org.slf4j:jul-to-slf4j'
     //YML 관련
-    implementation 'org.yaml:snakeyaml'
+    implementation 'org.yaml:snakeyaml'*/
 
-/*
-    //3. 스프링 부트 스타터
+
+    //3. 스프링 부트 스타터 (편리하게 시작하기 위한 의존성 세트라고 보면 된다.)
     implementation 'org.springframework.boot:spring-boot-starter-web'
-*/
+
+    //외부 라이브러리의 버전을 변경하고 싶을 때 다음과 같은 형식으로 편리하게 변경할 수 있다.
+    // 공식문서에서 Version Properties 참고해서 이름을 적어넣으면 된다.
+    // 스프링 부트가 관리하는 외부 라이브러리의 버전을 변경하는 일은 거의 없지만 아주 가끔 문제가 발생 하기도 하므로 알아두기
+    ext['tomcat.version'] = '10.1.4'
 }
 
 tasks.named('test') {
