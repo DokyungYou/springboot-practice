@@ -1,6 +1,11 @@
 plugins {
     id 'java'
+    /*스프링부트 플러그인을 사용 시 실행가능한 Jar 구조를 기본으로 만들기때문에 제외
+    * (현재 순수 라이브러리용으로 쓰일 Jar 를 만드는 것이 목적)
+    * */ 
+    
 }
+
 
 group = 'memory'
 sourceCompatibility = '17'
@@ -9,8 +14,10 @@ repositories {
     mavenCentral()
 }
 
+
+// 버전관리 플러그인을 제외했기때문에, 라이브러리들의 버전을 명시해줘야한다.
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.2' // 스프링 컨트롤러가 필요해서 가져옴
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.2'
