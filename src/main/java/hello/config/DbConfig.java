@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 public class DbConfig {
 
     // 해당 빈들은 이렇게 수동으로 등록하지 않아도 된다. (스프링 부트가 자동으로 등록해주는 빈들이다.)
+    // 이렇게 직접 빈을 등록하면 자동 구성은 동작하지 않는다. (직접 등록한 것이 우선권을 가짐)
     @Bean
     public DataSource dataSource() {
         log.info("dataSource 빈 등록");
