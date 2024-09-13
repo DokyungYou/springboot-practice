@@ -19,6 +19,9 @@ repositories {
 }
 
 dependencies {
+    // 실습한 라이브러리용 jar 추가
+    implementation files('libs/memory-v2.jar')
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
